@@ -1,0 +1,18 @@
+//restart the docker containers
+sudo systemctl restart docker.socket docker.service
+
+
+//delete container 
+docker rm -f <container id>
+
+//stop container 
+docker stop container
+
+//stop all containers
+docker stop $(docker ps -a -q)
+
+//remove all images at once
+docker rmi --force  $(docker images -q)
+
+//remove a specific image
+docker image rm 3a5e53f63281 -f
